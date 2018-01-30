@@ -1,12 +1,11 @@
 {
   "db": {
-    "host": "mongodb",
-    "port": 27017,
-    "url": "",
-    "database": "loopbackapi",
+    "host": "172.22.0.2",
+    "port": 28015,
+    "database": "test",
+    "username": "",
     "password": "",
-    "name": "db",
-    "user": "",
-    "connector": "mongodb"
+    "name": "rethinkDB",
+    "connector": "rethinkdb"
   }
 }

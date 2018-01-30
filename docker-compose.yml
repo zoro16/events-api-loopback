@@ -1,26 +1,22 @@
-version: '3.5'
+version: '3'
 
 services:
+  rethinkdb:
+    image: loopback-rethinkdb
+    ports:
+      - "38080:8080"
+    volumes:
+      - ./data:/data
+    command: rethinkdb --bind all
+
   api:
     image: loopback-api
     environment:
       NODE_ENV: development
     ports:
-      - 3002:3000  # map our machines port 3002 with port 3000 in the container
+      - 3002:3000
     volumes:
-      - .:/usr/src/api  # map this current directory with /usr/src/api in the docker container
-    command: nodemon .
-
-  mongodb:
-    image: loopback-mongo
-    environment:
-      MONGODB_USER: ""
-      MONGODB_PASS: ""
-      MONGO_DATA_DIR: /data/db
-      MONGO_LOG_DIR: /dev/null
-      MONGO_URL: mongodb://localhost:27017
-    volumes:
-      - ./data/db:/data/db
-    ports:
-      - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
+      - .:/usr/src/api
+    command: node .
+    depends_on:
+      - rethinkdb
