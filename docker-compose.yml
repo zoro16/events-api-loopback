@@ -14,25 +14,13 @@ services:
   mongodb:
     image: loopback-mongo
     environment:
-      MONGODB_USER: "${user}" 
-      MONGODB_PASS: "${pass}"
+      MONGODB_USER: ""
+      MONGODB_PASS: ""
       MONGO_DATA_DIR: /data/db
       MONGO_LOG_DIR: /dev/null
-      SECRET_KEY_BASE: secret
-      MONGO_URL: mongodb://mongo:27017/app_development
+      MONGO_URL: mongodb://localhost:27017
     volumes:
       - ./data/db:/data/db
     ports:
       - 27017:27017
     command: mongod --smallfiles --logpath=/dev/null # --quiet
-
-
-# docker-compose run api slc loopback
-# docker-compose run api yarn
-# docker-compose up
-# docker-compose exec mysqlDB mysql -u devuser -p
-
-# docker-compose up -d
-# docker-compose logs -f
-# docker-compose logs -f api
-# docker-compose exec api yarn add loopback-connector-mysql

@@ -1,12 +1,12 @@
 {
   "db": {
-    "host": "localhost",
+    "host": "mongodb",
     "port": 27017,
     "url": "",
     "database": "loopbackapi",
-    "password": "userpwd",
+    "password": "",
     "name": "db",
-    "user": "username",
+    "user": "",
     "connector": "mongodb"
   }
 }
