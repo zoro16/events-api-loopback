@@ -3,7 +3,7 @@
     "host": "mongodb",
     "port": 27017,
     "url": "",
-    "database": "loopbackapi",
+    "database": "eventsDB",
     "password": "",
     "name": "db",
     "user": "",

@@ -1,5 +1,5 @@
 {
-  "name": "listofstuff",
+  "name": "events",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,17 +13,14 @@
     "city": {
       "type": "string",
       "required": true
+    },
+    "address": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {},
   "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "DENY"
-    },
     {
       "accessType": "*",
       "principalType": "ROLE",
