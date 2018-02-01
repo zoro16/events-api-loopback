@@ -17,6 +17,6 @@ services:
       - 3002:3000
     volumes:
       - .:/usr/src/api
-    command: node .
+    command: bash -c "node /usr/src/api/dockerfiles/rethinkdb/entrypoint.js && node ."
     depends_on:
       - rethinkdb

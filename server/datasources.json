@@ -2,10 +2,6 @@
   "db": {
     "host": "172.22.0.2",
     "port": 28015,
-    "database": "test",
-    "username": "",
-    "password": "",
-    "name": "rethinkDB",
     "connector": "rethinkdb"
   }
 }
